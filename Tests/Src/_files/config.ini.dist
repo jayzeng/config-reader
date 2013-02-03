@@ -1,0 +1,4 @@
+[production]
+host = localhost
+username = root
+password = password

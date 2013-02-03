@@ -1,0 +1,22 @@
+{
+    "name": "ConfigReader",
+    "description": "Simple Config reader to parse ini and csv config files",
+    "authors": [
+        {
+            "name": "Jay Zeng",
+            "email": "jayzeng@jay-zeng.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "3.7.10"
+    },
+    "autoload": {
+        "classmap": [
+            "Src"
+        ]
+    },
+    "config": {
+        "vendor-dir" : "Vendors",
+        "vendor-bin" : "Vendors/bin"
+    }
+}

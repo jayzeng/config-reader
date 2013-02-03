@@ -1,0 +1,17 @@
+<phpunit bootstrap="../bootstrap.php"
+         colors="true"
+         stopOnError="true"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         convertErrorsToExceptions="false"
+         verbose="true"
+         strict="true"
+    >
+
+    <testsuites>
+        <testsuite name="Config Reader Test Suite" >
+            <directory>../Src/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
