@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Config-reader by jayzeng</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Config-reader</h1>
+        <p>Config Reader to parse ini files</p>
+
+        <p class="view"><a href="https://github.com/jayzeng/config-reader">View the Project on GitHub <small>jayzeng/config-reader</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jayzeng/config-reader/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jayzeng/config-reader/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jayzeng/config-reader">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Config Reader to parse ini files</h1>
+
+<p><a href="https://travis-ci.org/jayzeng/config-reader"><img src="https://travis-ci.org/jayzeng/config-reader.png" alt="Build Status"></a></p>
+
+<h2>Usage:</h2>
+
+<p>config.ini</p>
+
+<div class="highlight"><pre><span class="k">[production]</span>
+<span class="na">username</span> <span class="o">=</span> <span class="s">'jayzeng'</span>
+<span class="na">password</span> <span class="o">=</span> <span class="s">'password'</span>
+
+<span class="k">[whitelistIps]</span>
+<span class="na">ip[]</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<span class="na">ip[]</span> <span class="o">=</span> <span class="s">192.168.0.1/24</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="k">use</span> <span class="nx">ConfigReader\Ini</span> <span class="k">as</span> <span class="nx">IniReader</span><span class="p">;</span>
+
+<span class="c1">// read a specific rule</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nx">IniReader</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">'config.ini'</span> <span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s1">'production'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">getLabel</span><span class="p">(</span><span class="s1">'username'</span><span class="p">);</span>
+                    <span class="c1">// returns jayzeng</span>
+</pre></div>
+
+<p>Read all rules within a label section</p>
+
+<div class="highlight"><pre><span class="k">use</span> <span class="nx">ConfigReader\Ini</span> <span class="k">as</span> <span class="nx">IniReader</span><span class="p">;</span>
+
+<span class="c1">// read all rules within production section</span>
+<span class="nv">$prodConfig</span> <span class="o">=</span> <span class="nx">IniReader</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">'config.ini'</span> <span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s1">'production'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">toArray</span><span class="p">();</span>
+
+<span class="c1">// returns</span>
+<span class="c1">// array</span>
+<span class="c1">// 'username' =&gt; 'jayzeng'</span>
+<span class="c1">// 'password' =&gt; 'password'</span>
+
+<span class="c1">// You can also populate an array</span>
+<span class="nv">$ips</span> <span class="o">=</span> <span class="nx">IniReader</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">'config.ini'</span> <span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s1">'whitelistIps'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="na">toArray</span><span class="p">();</span>
+<span class="c1">// returns</span>
+<span class="c1">// array</span>
+<span class="c1">// 'ip' =&gt; array ( '127.0.0.1', '192.168.0.1/24' );</span>
+</pre></div>
+
+<h2>Issues &amp; Development</h2>
+
+<ul>
+<li>Source hosted <a href="https://github.com/jayzeng/config-reader">GitHub</a>
+</li>
+<li>Report issues, questions, feature requests on <a href="https://github.com/jayzeng/config-reader/issues">GitHub Issues</a>
+</li>
+</ul><h2>How to release new version?</h2>
+
+<ul>
+<li>RELEASE_VERSION - version number</li>
+<li>RELEASE_MESSAGE - release message</li>
+</ul><div class="highlight"><pre>make release <span class="nv">RELEASE_VERSION</span><span class="o">=</span><span class="s2">"0.1"</span> <span class="nv">RELEASE_MESSAGE</span><span class="o">=</span><span class="s2">"v0.1 is released"</span>
+</pre></div>
+
+<h2>Author:</h2>
+
+<p><a href="https://github.com/jayzeng/">Jay Zeng</a>, e-mail: <a href="mailto:jayzeng@jay-zeng.com">jayzeng@jay-zeng.com</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jayzeng">jayzeng</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-38201456-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
