@@ -10,4 +10,4 @@ before_script:
   - php composer.phar update -v
 
 script:
-  - ./Vendors/bin/phpunit --colors --coverage-text -c Conf/phpunit.xml
+  - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
