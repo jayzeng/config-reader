@@ -27,10 +27,10 @@ namespace ConfigReader;
 /**
  * Ini parser that provides an OO style getters to
  * read Ini values
- * @category Framework
- * @package Framework_Config
+ * @category ConfigReader
+ * @package ConfigReader
  */
-class Ini implements \IteratorAggregate, \Countable
+class Ini implements \IteratorAggregate, \Countable, ConfigInterface
 {
     /**
      * @var Array
@@ -148,7 +148,7 @@ class Ini implements \IteratorAggregate, \Countable
     }
 
     /**
-     * @return Array ini data in array
+     * @see ConfigInterface::toArray()
      */
     public function toArray() {
         return $this->_data[$this->_loadedSection];
