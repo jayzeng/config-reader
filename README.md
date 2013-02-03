@@ -48,7 +48,7 @@ $ips = IniReader::factory( __DIR__ . DIRECTORY_SEPARATOR . 'config.ini' )
 
 ##Issues & Development
 - Source hosted [GitHub](https://github.com/jayzeng/config-reader)
-- Report issues, questions, feature requests on [GitHub Issues](https://github.com/jayzeng/config-reader)
+- Report issues, questions, feature requests on [GitHub Issues](https://github.com/jayzeng/config-reader/issues)
 
 ##Author:
 [Jay Zeng](https://github.com/jayzeng/), e-mail: [jayzeng@jay-zeng.com](mailto:jayzeng@jay-zeng.com)
