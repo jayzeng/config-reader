@@ -1,0 +1,50 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Vim
+*~
+*.sw[a-z]
+
+# PhpStorm (IDE) project files
+.idea/*
+
+# Don't include lock file
+composer.lock
+
+# Don't include Vendors code in our repo
+Vendors/
+
+# Comment this line out if you need to check in
+# database schema
+Tests/Conf/Sql/*
