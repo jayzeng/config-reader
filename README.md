@@ -1,6 +1,8 @@
 # Config Reader to parse ini files
 [![Build Status](https://travis-ci.org/jayzeng/config-reader.png)](https://travis-ci.org/jayzeng/config-reader)
 
+Project website: (http://jayzeng.github.com/config-reader/)
+
 ##Usage:
 config.ini
 ```ini
