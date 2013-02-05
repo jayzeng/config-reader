@@ -5,7 +5,7 @@
  * @package Test_Config
  * @author Jay Zeng (jayzeng@jay-zeng.com)
  */
-namespace Test\ConfigReader;
+namespace Tests\ConfigReader;
 
 use \ConfigReader\Ini;
 

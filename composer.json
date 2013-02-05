@@ -20,7 +20,7 @@
     "autoload": {
         "psr-0": {
             "ConfigReader": "Src/",
-            "Test\\ConfigReader": "Test/"
+            "Tests\\ConfigReader": "Tests/"
         }
     },
     "config": {
