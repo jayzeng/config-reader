@@ -30,10 +30,11 @@ endef
 export license
 
 init:
+	composer update -v -o
 	@echo "$$license" > LICENSE
 
 test:
-	phpunit --configuration $(PHPUNITCONFIG)
+	./Vendors/bin/phpunit --configuration $(PHPUNITCONFIG)
 
 release:
 	@git tag -a "v$$RELEASE_VERSION" -m "$$RELEASE_MESSAGE"
