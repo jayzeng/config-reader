@@ -1,5 +1,5 @@
 # Config Reader to parse ini files
-[![Build Status](https://travis-ci.org/jayzeng/config-reader.png)](https://travis-ci.org/jayzeng/config-reader)
+[![Latest Stable Version](https://poser.pugx.org/jayzeng/config-reader/v/stable.png)](https://packagist.org/packages/jayzeng/config-reader)[![Total Downloads](https://poser.pugx.org/jayzeng/config-reader/downloads.png)](https://packagist.org/packages/jayzeng/config-reader)[![Build Status](https://travis-ci.org/jayzeng/config-reader.png)](https://travis-ci.org/jayzeng/config-reader)
 
 Project website: (http://jayzeng.github.com/config-reader/)
 
