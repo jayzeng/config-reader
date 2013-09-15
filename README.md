@@ -62,3 +62,7 @@ make release RELEASE_VERSION="0.1" RELEASE_MESSAGE="v0.1 is released"
 
 ##Author:
 [Jay Zeng](https://github.com/jayzeng/), e-mail: [jayzeng@jay-zeng.com](mailto:jayzeng@jay-zeng.com)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jayzeng/config-reader/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
